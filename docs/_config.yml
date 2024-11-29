@@ -1,10 +1,10 @@
-# Site settings
-title: math  # 웹사이트 제목
-description: AIngo 과제 # 사이트 설명
-baseurl: ""              # 사이트의 기본 URL (보통은 비워둡니다)
-url: "https://gjjin.github.io/donka/"  # 자신의 GitHub 사용자 페이지 URL
-theme: jekyll-theme-primer  # 사용할 Jekyll 테마 (원하는 테마로 수정 가능)
+# Site 
+title: math  
+description: AIngo 과제 
+baseurl: ""             
+url: "https://gjjin.github.io/donka/" 
+theme: jekyll-theme-primer  
 
-# Build settings
-markdown: kramdown       # 마크다운 처리기
-permalink: pretty        # 페이지의 URL 형태
+# Build 
+markdown: kramdown       
+permalink: pretty       

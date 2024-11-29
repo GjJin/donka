@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>덧셈 게임</title>
     <link rel="icon" href="math.jpg"/>
-    <!-- CSS 코드 -->
+
     <style>
         * {
             margin: 0;
@@ -67,7 +67,7 @@
             background-color: #218838;
         }
 
-        /* 흔들림 애니메이션 */
+        /* 흔들림 */
         @keyframes shake {
             0% { transform: translateX(0); }
             25% { transform: translateX(-10%); }
@@ -80,7 +80,7 @@
             animation: shake 0.5s ease;
         }
 
-        /* 경고 메시지 스타일 */
+        /* 경고 */
         #error-message {
             color: red;
             font-size: 1.2rem;
@@ -99,7 +99,6 @@
         <button id="submit">제출</button>
     </div>
 
-    <!-- JavaScript 코드 -->
     <script>
         let score = 0;
         let num1, num2;
@@ -115,7 +114,7 @@
             const userAnswer = answerInput.value;
             const correctAnswer = num1 + num2;
 
-            // 입력이 비어 있는 경우 경고 메시지
+            // 빈칸
             if (userAnswer === '') {
                 alert('답을 입력하세요!');
                 return;
@@ -127,21 +126,21 @@
                 document.getElementById('score').textContent = score;
                 generateQuestion();
             } else {
-                // 틀렸을 때 점수 1점 깎기 (최소 점수 0)
+                // 감점
                 if (score > 0) {
                     score--;
                 }
                 document.getElementById('score').textContent = score;
 
-                // 틀렸을 때 흔들림 효과 및 경고 메시지
+                // 틀림
                 shakeScreen();
                 showErrorMessage('틀렸습니다! 다시 시도하세요.');
             }
-            // 답을 제출 후 입력창 비우기
+            //  입력창 비우기
             answerInput.value = '';
         }
 
-        // 화면 흔들림 효과 함수
+        // 화면 흔들림
         function shakeScreen() {
             const gameContainer = document.querySelector('.game-container');
             gameContainer.classList.add('shake');
@@ -151,7 +150,7 @@
             }, 500);
         }
 
-        // 경고 메시지 표시 함수
+        // 경고
         function showErrorMessage(message) {
             let errorMessage = document.getElementById('error-message');
             
@@ -168,23 +167,23 @@
             }, 2000);
         }
 
-        // 숫자만 입력되도록 제한하는 함수
+        // 숫자만 입력
         document.getElementById('answer').addEventListener('input', function(event) {
             const value = event.target.value;
             event.target.value = value.replace(/[^0-9]/g, '');
         });
 
-        // 버튼 클릭 이벤트 리스너 추가
+        // 버튼 클릭
         document.getElementById('submit').addEventListener('click', checkAnswer);
 
-        // 엔터키 입력 감지 및 처리
+        // 엔터
         document.getElementById('answer').addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 checkAnswer();
             }
         });
 
-        // 게임 시작 시 첫 문제 생성
+        // 첫문장
         generateQuestion();
     </script>
 </body>
